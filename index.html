@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aastha Elizabeth George | Counselling Psychologist</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #f8fdfa 0%, #f0f9f4 100%);
+      color: #2d3e37;
+      line-height: 1.7;
+      font-size: 1.1rem;
+      overflow-x: hidden;
+    }
+
+    /* Floating elements animation */
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(5deg); }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    .fade-in.delay-1 { animation-delay: 0.2s; opacity: 0; }
+    .fade-in.delay-2 { animation-delay: 0.4s; opacity: 0; }
+    .fade-in.delay-3 { animation-delay: 0.6s; opacity: 0; }
+
+    /* Background decorative elements */
+    .bg-decoration {
+      position: absolute;
+      opacity: 0.03;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .bg-circle-1 {
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, #5ba381 0%, transparent 70%);
+      border-radius: 50%;
+      top: -200px;
+      right: -200px;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .bg-circle-2 {
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, #79c0a6 0%, transparent 70%);
+      border-radius: 50%;
+      bottom: -150px;
+      left: -150px;
+      animation: float 8s ease-in-out infinite reverse;
+    }
+
+    h1, h2 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 500;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      color: #1e3a2e;
+      margin-bottom: 0.8rem;
+      letter-spacing: -0.02em;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 4vw, 2.2rem);
+      color: #2b443a;
+      margin: 3rem 0 1.5rem 0;
+      position: relative;
+      padding-bottom: 0.8rem;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, #5ba381 0%, #79c0a6 100%);
+      border-radius: 2px;
+      box-shadow: 0 2px 4px rgba(91, 163, 129, 0.3);
+    }
+
+    p, li {
+      font-size: 1.1rem;
+      margin-bottom: 1.2rem;
+      color: #3a4d42;
+      font-weight: 400;
+    }
+
+    a {
+      color: #5ba381;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+
+    a:hover {
+      color: #488f6c;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    }
+
+    /* Header / Hero */
+    header {
+      position: relative;
+      background: linear-gradient(135deg, #2d5d3d 0%, #3a7052 20%, #4a8063 40%, #5ba381 70%, #79c0a6 100%);
+      padding: 0;
+      margin: 0;
+      text-align: center;
+      overflow: hidden;
+      min-height: 100vh;
+      width: 100vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Animated background elements */
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 20% 80%, rgba(255,255,255,0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.05) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(255,255,255,0.08) 0%, transparent 50%);
+      animation: shimmer 8s ease-in-out infinite alternate;
+    }
+
+    @keyframes shimmer {
+      0% { opacity: 0.3; }
+      100% { opacity: 0.7; }
+    }
+
+    /* Floating particles */
+    .particle {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      pointer-events: none;
+      animation: floatParticle 15s infinite linear;
+    }
+
+    @keyframes floatParticle {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.3;
+      }
+      90% {
+        opacity: 0.3;
+      }
+      100% {
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    .particle:nth-child(1) { left: 10%; width: 4px; height: 4px; animation-delay: 0s; }
+    .particle:nth-child(2) { left: 20%; width: 6px; height: 6px; animation-delay: 2s; }
+    .particle:nth-child(3) { left: 30%; width: 3px; height: 3px; animation-delay: 4s; }
+    .particle:nth-child(4) { left: 40%; width: 5px; height: 5px; animation-delay: 6s; }
+    .particle:nth-child(5) { left: 50%; width: 4px; height: 4px; animation-delay: 8s; }
+    .particle:nth-child(6) { left: 60%; width: 6px; height: 6px; animation-delay: 10s; }
+    .particle:nth-child(7) { left: 70%; width: 3px; height: 3px; animation-delay: 12s; }
+    .particle:nth-child(8) { left: 80%; width: 5px; height: 5px; animation-delay: 14s; }
+    .particle:nth-child(9) { left: 90%; width: 4px; height: 4px; animation-delay: 16s; }
+
+    .hero {
+      max-width: 1000px;
+      margin: auto;
+      position: relative;
+      z-index: 2;
+      padding: 2rem;
+    }
+
+    .profile-container {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 3rem;
+    }
+
+    .profile-pic {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 8px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 
+        0 20px 50px rgba(0,0,0,0.2),
+        0 0 0 2px rgba(255, 255, 255, 0.1),
+        inset 0 0 0 2px rgba(255, 255, 255, 0.1);
+      transition: all 0.4s ease;
+      position: relative;
+      z-index: 2;
+    }
+
+    .profile-pic:hover {
+      transform: scale(1.08) rotate(2deg);
+      box-shadow: 
+        0 25px 60px rgba(0,0,0,0.25),
+        0 0 0 3px rgba(255, 255, 255, 0.2),
+        inset 0 0 0 3px rgba(255, 255, 255, 0.2);
+    }
+
+    /* Glowing ring around profile pic */
+    .profile-container::before {
+      content: '';
+      position: absolute;
+      top: -20px;
+      left: -20px;
+      right: -20px;
+      bottom: -20px;
+      border-radius: 50%;
+      background: linear-gradient(45deg, rgba(255,255,255,0.1), transparent, rgba(255,255,255,0.1));
+      animation: rotate 10s linear infinite;
+      z-index: 1;
+    }
+
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .hero h1 {
+      color: white;
+      text-shadow: 
+        0 2px 10px rgba(0,0,0,0.3),
+        0 0 30px rgba(255,255,255,0.1);
+      margin-bottom: 1rem;
+      font-size: clamp(3rem, 6vw, 4.5rem);
+      font-weight: 500;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.2rem, 3vw, 1.6rem);
+      color: rgba(255, 255, 255, 0.9);
+      font-weight: 400;
+      margin-bottom: 2rem;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      line-height: 1.4;
+    }
+
+    .hero-tagline {
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      color: rgba(255, 255, 255, 0.8);
+      font-weight: 300;
+      max-width: 550px;
+      margin: 0 auto 3rem auto;
+      line-height: 1.6;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 1rem;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      color: white;
+      padding: 1.2rem 2.5rem;
+      border-radius: 50px;
+      font-weight: 500;
+      font-size: 1.1rem;
+      text-decoration: none;
+      transition: all 0.4s ease;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 
+        0 8px 25px rgba(0,0,0,0.1),
+        inset 0 1px 0 rgba(255,255,255,0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-cta::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.6s;
+    }
+
+    .hero-cta:hover {
+      transform: translateY(-3px);
+      background: rgba(255, 255, 255, 0.25);
+      border-color: rgba(255, 255, 255, 0.4);
+      box-shadow: 
+        0 15px 35px rgba(0,0,0,0.15),
+        inset 0 1px 0 rgba(255,255,255,0.2);
+      color: white;
+    }
+
+    .hero-cta:hover::before {
+      left: 100%;
+    }
+
+    /* Scroll indicator */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.9rem;
+      text-align: center;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+      40% { transform: translateX(-50%) translateY(-10px); }
+      60% { transform: translateX(-50%) translateY(-5px); }
+    }
+
+    .scroll-arrow {
+      display: block;
+      width: 20px;
+      height: 20px;
+      margin: 0.5rem auto;
+      border-right: 2px solid rgba(255, 255, 255, 0.7);
+      border-bottom: 2px solid rgba(255, 255, 255, 0.7);
+      transform: rotate(45deg);
+    }
+
+    /* Main layout */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    section {
+      margin-bottom: 4rem;
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(10px);
+      padding: 2.5rem;
+      border-radius: 20px;
+      box-shadow: 
+        0 8px 32px rgba(0,0,0,0.06),
+        0 0 0 1px rgba(255, 255, 255, 0.3);
+      border: 1px solid rgba(91, 163, 129, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    section:hover {
+      transform: translateY(-5px);
+      box-shadow: 
+        0 15px 45px rgba(0,0,0,0.1),
+        0 0 0 1px rgba(255, 255, 255, 0.4);
+    }
+
+    section h2 {
+      margin-top: 0;
+    }
+
+    /* Lists */
+    ul {
+      padding-left: 0;
+      list-style: none;
+    }
+
+    ul li {
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: 1rem;
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+
+    ul li::before {
+      content: '✨';
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 1.2rem;
+      color: #5ba381;
+    }
+
+    ul li:hover {
+      transform: translateX(5px);
+      color: #2b443a;
+    }
+
+    /* Button */
+    .button {
+      display: inline-flex;
+      align-items: center;
+      background: linear-gradient(135deg, #5ba381 0%, #79c0a6 100%);
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 15px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 
+        0 6px 20px rgba(91, 163, 129, 0.3),
+        0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+      margin-top: 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s;
+    }
+
+    .button:hover::before {
+      left: 100%;
+    }
+
+    .button:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 
+        0 10px 30px rgba(91, 163, 129, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.2) inset;
+      color: white;
+    }
+
+    .button:active {
+      transform: translateY(-1px) scale(1.01);
+    }
+
+    /* Calendly Embed */
+    .calendar-container {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+      background: white;
+    }
+
+    iframe {
+      width: 100%;
+      border: none;
+      display: block;
+    }
+
+    /* Contact Box */
+    .contact {
+      background: linear-gradient(135deg, #f0f9f4 0%, #e8f5ed 100%);
+      border-left: 6px solid #5ba381;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(91, 163, 129, 0.05) 0%, transparent 70%);
+      animation: float 10s ease-in-out infinite;
+    }
+
+    .contact strong {
+      color: #2b443a;
+      font-weight: 600;
+    }
+
+    .contact p {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 3rem 2rem;
+      background: linear-gradient(135deg, #f5f9f6 0%, #eef5f1 100%);
+      color: #6b7d73;
+      font-size: 1rem;
+      border-top: 1px solid rgba(91, 163, 129, 0.1);
+      position: relative;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .container {
+        padding: 2rem 1.5rem;
+      }
+      
+      section {
+        padding: 2rem 1.5rem;
+        margin-bottom: 2.5rem;
+      }
+      
+      header {
+        padding: 3rem 1.5rem;
+      }
+      
+      .profile-pic {
+        width: 150px;
+        height: 150px;
+      }
+      
+      h1 {
+        font-size: 2.5rem;
+      }
+      
+      h2 {
+        font-size: 1.8rem;
+      }
+    }
+
+    /* Scroll animations */
+    @media (prefers-reduced-motion: no-preference) {
+      section {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 0.8s ease-out forwards;
+      }
+      
+      section:nth-child(1) { animation-delay: 0.1s; }
+      section:nth-child(2) { animation-delay: 0.2s; }
+      section:nth-child(3) { animation-delay: 0.3s; }
+      section:nth-child(4) { animation-delay: 0.4s; }
+      section:nth-child(5) { animation-delay: 0.5s; }
+      section:nth-child(6) { animation-delay: 0.6s; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Background decorative elements -->
+  <div class="bg-decoration bg-circle-1"></div>
+  <div class="bg-decoration bg-circle-2"></div>
+
+  <header>
+    <!-- Floating particles -->
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+
+    <div class="hero fade-in">
+      <div class="profile-container">
+        <img src="profile.jpg" alt="Aastha Elizabeth George" class="profile-pic" />
+      </div>
+      
+      <h1>Aastha Elizabeth George</h1>
+      <p class="hero-subtitle">Counselling Psychologist · M.A. Psychology · NET Qualified</p>
+      <p class="hero-tagline">Creating safe spaces for young adults to explore, heal, and grow through life's complex journey</p>
+      
+      <a href="#booking" class="hero-cta">
+        <span>Start Your Journey</span>
+        <span>→</span>
+      </a>
+    </div>
+
+    <div class="scroll-indicator">
+      <span>Scroll to explore</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="fade-in delay-1">
+      <h2>Hi, I'm Aastha 👋</h2>
+      <p>I'm a counselling psychologist who works with young adults navigating the messy, beautiful, sometimes-overwhelming chapters of life. Whether you're feeling stuck, anxious, or just need space to unpack your thoughts—I'm here to support you.</p>
+    </section>
+
+    <section class="fade-in delay-2">
+      <h2>Areas of Support</h2>
+      <ul>
+        <li>Overthinking, Anxiety & Self-doubt</li>
+        <li>Burnout, Boundaries & Work-life stress</li>
+        <li>Relationships & Emotional patterns</li>
+        <li>Perfectionism & Self-criticism</li>
+        <li>Trauma-informed emotional care</li>
+      </ul>
+    </section>
+
+    <section class="fade-in delay-3">
+      <h2>Therapy Style</h2>
+      <p>I combine evidence-based methods like CBT, Narrative Therapy, and DBT with a warm, collaborative approach. Think of it as a space where you're heard, not fixed. Your goals lead the way—we work together to get you there.</p>
+    </section>
+
+    <section id="booking">
+      <h2>Before Booking</h2>
+      <p>To get the most out of our first session, please take 2 minutes to fill out this quick form:</p>
+      <a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSfhTSyQiAHpKlldRKCrwpnHuUTM_d8FanwSr3BEeT-nhLhd3Q/viewform" target="_blank">Complete Intake Form</a>
+    </section>
+
+    <section>
+      <h2>Book a Session</h2>
+      <p>Once the form is submitted, you can choose a time that works for you:</p>
+      <div class="calendar-container">
+        <iframe src="https://calendly.com/aasthageorge-psy/personal-therapy" height="630"></iframe>
+      </div>
+    </section>
+
+    <section class="contact">
+      <h2>Let's Connect</h2>
+      <p>
+        <strong>Email:</strong> <a href="mailto:aasthageorge99@gmail.com">aasthageorge99@gmail.com</a><br />
+        <strong>Phone:</strong> <a href="tel:+917303209046">+91-7303209046</a><br />
+        <strong>Languages:</strong> English, Hindi, Malayalam
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    &copy; 2025 Aastha Elizabeth George. All rights reserved.
+  </footer>
+
+  <script>
+    // Add smooth scroll behavior and entrance animations
+    document.addEventListener('DOMContentLoaded', function() {
+      // Intersection Observer for scroll animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, observerOptions);
+
+      // Observe all sections for animation
+      document.querySelectorAll('section').forEach(section => {
+        observer.observe(section);
+      });
+
+      // Add subtle parallax effect to background elements
+      let ticking = false;
+      
+      function updateParallax() {
+        const scrolled = window.pageYOffset;
+        const parallax1 = document.querySelector('.bg-circle-1');
+        const parallax2 = document.querySelector('.bg-circle-2');
+        
+        if (parallax1) {
+          parallax1.style.transform = `translate3d(0, ${scrolled * 0.2}px, 0)`;
+        }
+        if (parallax2) {
+          parallax2.style.transform = `translate3d(0, ${scrolled * -0.1}px, 0)`;
+        }
+        
+        ticking = false;
+      }
+
+      function requestTick() {
+        if (!ticking) {
+          requestAnimationFrame(updateParallax);
+          ticking = true;
+        }
+      }
+
+      // Add smooth scrolling for the CTA button
+      document.querySelector('.hero-cta')?.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector('#booking')?.scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
